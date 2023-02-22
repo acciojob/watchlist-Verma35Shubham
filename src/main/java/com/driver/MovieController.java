@@ -13,7 +13,7 @@ public class MovieController {
     MovieService movieServices;
 
     @PostMapping("/add_movie")
-    public ResponseEntity<String> addMovie(@RequestBody() Movies movie){
+    public ResponseEntity<String> addMovie(@RequestBody() Movie movie){
         movieServices.addMovie(movie);
         return new ResponseEntity<>("new movie added successfully", HttpStatus.CREATED);
     }
@@ -31,8 +31,8 @@ public class MovieController {
     }
 
     @GetMapping("/get_movie_by_name/{name}")
-    public ResponseEntity<Movies> getMovieByName(@PathVariable String name){
-        Movies movie = movieServices.findMovie(name);
+    public ResponseEntity<Movie> getMovieByName(@PathVariable String name){
+        Movie movie = movieServices.findMovie(name);
         return new ResponseEntity<>(movie, HttpStatus.CREATED);
     }
 

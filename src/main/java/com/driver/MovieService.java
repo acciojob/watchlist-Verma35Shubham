@@ -10,7 +10,7 @@ public class MovieService {
     @Autowired
     MovieRepositry movieRepositry;
 
-    public void addMovie(Movies movies){
+    public void addMovie(Movie movies){
         movieRepositry.saveMovie(movies);
     }
     public void addDirector(Director director){
@@ -20,7 +20,7 @@ public class MovieService {
         movieRepositry.saveMovieDirectorPair(movie, director);
     }
 
-    public Movies findMovie(String movieName){
+    public Movie findMovie(String movieName){
         return movieRepositry.findMovie(movieName);
     }
     public Director findDirector(String directorName){

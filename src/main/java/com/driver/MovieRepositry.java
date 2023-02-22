@@ -10,17 +10,17 @@ import java.util.List;
 @Repository
 public class MovieRepositry
 {
-    private HashMap<String, Movies> moviesMap;
+    private HashMap<String, Movie> moviesMap;
     private HashMap<String, Director> directorMap;
     private HashMap<String, List<String>> directorMovieMap;
 
-    public MovieRepositry(HashMap<String, Movies> moviesMap, HashMap<String, Director> directorMap, HashMap<String, List<String>> directorMovieMap) {
+    public MovieRepositry(HashMap<String, Movie> moviesMap, HashMap<String, Director> directorMap, HashMap<String, List<String>> directorMovieMap) {
         this.moviesMap = moviesMap;
         this.directorMap = directorMap;
         this.directorMovieMap = directorMovieMap;
     }
 
-    public void saveMovie(Movies movie){
+    public void saveMovie(Movie movie){
         moviesMap.put(movie.getName(), movie);
     }
     public void saveDirector(Director director){
@@ -38,7 +38,7 @@ public class MovieRepositry
         }
     }
 
-    public Movies findMovie(String movie){
+    public Movie findMovie(String movie){
         return moviesMap.get(movie);
     }
 
